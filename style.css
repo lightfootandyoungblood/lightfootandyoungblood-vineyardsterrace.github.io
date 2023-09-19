@@ -61,9 +61,9 @@ nav ul li a{
     color: #fff;
     font-weight: 600;
     transition: 0.5s;
-  position: absolute;
-  top: 30px;
-  left: 230px;
+    position: absolute;
+    top: 30px;
+    left: 230px;
 }
 
 .content h1:hover{
