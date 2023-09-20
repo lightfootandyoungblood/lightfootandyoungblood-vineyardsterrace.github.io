@@ -307,7 +307,7 @@ button      a:active {
   display: inline-block;
   margin-top: 12px;
 }
-.right-side button{
+.right-side .button input[type="button"] {
   color: #fff;
   font-size: 18px;
   outline: none;
@@ -318,8 +318,7 @@ button      a:active {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
-button :hover {
+.button input[type="button"]:hover {
   background: #7e1d1a;
 }
 
