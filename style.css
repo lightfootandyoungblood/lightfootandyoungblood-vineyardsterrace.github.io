@@ -61,9 +61,9 @@ nav ul li a{
     color: #fff;
     font-weight: 600;
     transition: 0.5s;
-    position: absolute;
-    top: 30px;
-    left: 230px;
+  position: absolute;
+  top: 30px;
+  left: 230px;
 }
 
 .content h1:hover{
@@ -219,7 +219,7 @@ button      a:active {
   margin: auto;
 }
 
-.container {
+   .container {
   max-width: 1100px;
   width: 100%;
   background: #fff;
@@ -307,7 +307,7 @@ button      a:active {
   display: inline-block;
   margin-top: 12px;
 }
-.right-side .button input[type="button"] {
+.right-side button{
   color: #fff;
   font-size: 18px;
   outline: none;
@@ -318,9 +318,11 @@ button      a:active {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.button input[type="button"]:hover {
+
+button :hover {
   background: #7e1d1a;
 }
+
 
 @media (max-width: 950px) {
   .container {
