@@ -127,7 +127,7 @@ nav ul li a{
   cursor: pointer;
   padding: 15px 15px;
   font-size: 17px;
-  width: 14.2%;
+  width: 10%;
 }
 
 button    a:link {
@@ -307,7 +307,7 @@ button      a:active {
   display: inline-block;
   margin-top: 12px;
 }
-.right-side .button input[type="button"] {
+.right-side button{
   color: #fff;
   font-size: 18px;
   outline: none;
@@ -318,7 +318,8 @@ button      a:active {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.button input[type="button"]:hover {
+
+button :hover {
   background: #7e1d1a;
 }
 
