@@ -30,7 +30,7 @@ nav{
     position: absolute;
     top: 0;
     left: 0;
-    padding: 20px 10%;
+    padding: 20px 5%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -64,7 +64,7 @@ nav ul li a{
     transition: 0.5s;
   position: absolute;
   top: 30px;
-  left: 230px;
+  left: 200px;
 }
 
 .content h1:hover{
@@ -220,13 +220,9 @@ button      a:active {
   margin: auto;
 }
 
-   .container {
-  max-width: 1100px;
-  width: 100%;
+.container {
   background: #fff;
   border-radius: 6px;
-  padding: 20px 60px 30px 40px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 .container .content {
   display: flex;
@@ -534,6 +530,7 @@ footer {
     }
 }  
 
+/* Card Listing*/
 .cards-wrapper {
   display: flex;
   justify-content: center;
@@ -549,6 +546,39 @@ footer {
   border: none;
   border-radius: 0;
   width: calc(100%/3);
+}
+
+.card-body{
+    margin: 3%;
+    text-align: center;
+    font-style: Veranda, sans-serif; 
+}
+
+.card-body p{
+    font-size: 16px;
+    font-weight: 200;
+}
+
+.btn{
+        color: #fff;
+    background-color: #7e1d1a;
+    border-color: #7e1d1a;
+        display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    font-size: 16px;
+    line-height: 1.42857143;
+    border-radius: 4px; 
+    user-select: none;
 }
 
 .image-wrapper{
@@ -576,52 +606,51 @@ footer {
   }
 }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
+/* Floor Plan Dropdown Menu*/
+.dropdown{
+    display:inline-block;
+    position:relative;
+  }
 
-li {
-  float: left;
-}
-
-li a, .dropbtn {
-  display: inline-block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
-}
-
-li.dropdown {
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {background-color: #f1f1f1;}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
+  .dropdown button{
+    border:none;
+    padding:8px 16px;
+    background-color:#7e1d1a;
+    color:white;
+    transition:.3s;
+    cursor:pointer;
+  }
+  
+  .dropdown:hover button{
+    background-color:#7e1d1a;
+  }
+  
+  .dropdown div{
+    background-color:#fff;
+    box-shadow:0 4px 8px rgba(0,0,0,0.2);
+    z-index:1;
+    visibility:hidden;
+    position:absolute;
+    min-width:100%;
+    opacity:0;
+    transition:.3s;
+  }
+  
+  .dropdown:hover div{
+    visibility:visible;
+    opacity:1;
+  }
+  
+  .dropdown div a{
+    display:block;
+    text-decoration:none;
+    padding:8px;
+    color:#000;
+    transition:.1s;
+    white-space:nowrap;
+  }
+  
+  .dropdown div a:hover{
+    background-color:#7e1d1a;
+    color:#fff;
+  }
