@@ -11,27 +11,29 @@
           </link>
           <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />  
-          <link rel="stylesheet" href="style.css">
+          <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     
     
 <body>
-  <div class="hero center">
-      <video autoplay loop muted plays-inline class="back-video">
-      <source src="images/video.mp4" type="video/mp4">
-    </video>
-    <nav>
+  <nav>
       <img src="images/logo.png" class="logo" alt="Lightfoot & Youngblood Investment Real Estate">
-      <ul>
+      <div class="bx bx-menu" id="menu-icon"></div>
+      <ul class="nav-list">
         <li><a href="#">HOME</a></li>
         <li><a href="https://www.bransonhomefinder.com/" target="_blank">ABOUT US</a></li>
         <li><a href="https://www.bransonhomefinder.com/contact.php" target="_blank">CONTACT US</a></li>
       </ul>
-    </nav>
+  </nav>
 
     <div class="content">
       <h1>Live | Vacation | Invest</h1>
     </div>
+
+  <div class="hero">
+      <video autoplay loop muted plays-inline class="back-video">
+      <source src="images/video.mp4" type="video/mp4">
+    </video>
   </div>
 
 <br>
@@ -45,7 +47,6 @@
   <button class="tablinks" onclick="openCity(event, 'listings')">Listings</a></button>
   <button class="tablinks" onclick="openCity(event, 'inquiry')">Inquiry</button>
   <button class="tablinks" onclick="openCity(event, 'standard features list')">Standard Features List</button>
-  <button class="tablinks" onclick="openCity(event, 'color selections')">Color Selections</button>
   <button class="tablinks" onclick="openCity(event, 'furniture package')">Furniture Package</button>
 </div>
 
@@ -97,12 +98,12 @@
   <div class="dropdown center">
   <button>Plans</button>
   <div>
-    <a href="#">4 Bedroom Plan</a>
-    <a href="#">4 Bed 3 Bath Plan</a>
-    <a href="#">3 Bed Plan</a>
-    <a href="#">3 Bed 2 Bath Plan</a>
+    <a href="https://app.kvcore.com/listings/131/60205788">4 Bedroom Plan</a>
+    <a href="https://app.kvcore.com/listings/131/60251369">4 Bed 3 Bath Plan</a>
+    <a href="https://app.kvcore.com/listings/131/60251379">3 Bed 2 Bath Plan</a>
   </div>
 </div>
+
 <div class="container">
 <center><img src="https://cdn.resize.sparkplatform.com/somo/640x480/true/20230908034147148233000000-o.jpg" /></center>
 </div>
@@ -211,21 +212,6 @@
 </center>  
 </div>
 
-<div id="color selections" class="tabcontent">
-                <span style="line-height: 1.3; font-weight: bold;">
-                  Lorem ipsum dolor sit amet
-                </span>
-
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                  Vestibulum auctor sodales consectetur. Quisque molestie augue est, 
-                  id facilisis nisl posuere quis. Phasellus quis dictum urna. 
-                  Pellentesque dictum tempus ex, et accumsan ante tristique ultrices. 
-                  Cras id vestibulum est, eu sodales augue. In aliquet tincidunt justo, 
-                  nec porta velit ullamcorper in. Nunc quis sodales metus.
-                </p>
-</div>
-
 <div id="furniture package" class="tabcontent">
                 <span style="line-height: 1.3; font-weight: bold;">
                   Lorem ipsum dolor sit amet
@@ -306,6 +292,20 @@
 
 
 <script>
+
+  var video = document.getElementById("myVideo");
+var btn = document.getElementById("myBtn");
+
+function myFunction() {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
+  }
+}
+
 /*Tab Highlighter Functionality*/
 $(document).on('click', 'navbar .tabs ul.navbar-body li a', function(){
     var $this = $(this);

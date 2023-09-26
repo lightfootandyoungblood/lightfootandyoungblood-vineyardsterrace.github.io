@@ -5,7 +5,7 @@
  font-family: Veranda, sans-serif;
 }
 
- Set height of body and the document to 100% */
+ /*Set height of body and the document to 100% */
 body, html {
   margin: 0;
   font-family: Veranda;
@@ -18,11 +18,15 @@ body, html {
  overflow: hidden;
  position: relative;
  background-image: linear-gradient(rgba(12,3,51,0.3)), rgba(12,3,51,0.3);
+ align-self: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-attachment: fixed;
  padding: 0 5%;
  display: flex;
  align-items: center;
  justify-content: center;
-
+ flex-direction: column;
 }
 
 nav{
@@ -53,6 +57,22 @@ nav ul li a{
     font-weight:bolder;
 }
 
+.navlist{
+    display: flex;
+}
+
+.navlist a{
+    margin: 0px 5px;
+    padding: 5px 10px;
+    color: #d6d6d6;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all .50s ease;
+}
+
+.navlist a:hover{
+    color: #fff;
+}
 .content{
     text-align: center;
 }
@@ -93,19 +113,17 @@ nav ul li a{
 
 .back-video{
     position: absolute;
-    right: 0;
-    bottom: 0;
     z-index: -1;
 }
 
-@media (min-aspect-ratio:16/9){
+@media (min-width: 768px){
     .back-video{
         width: 100%;
         height: auto;
     }
 }
 
-@media (max-aspect-ratio: 16/0){
+@media (max-width: 769px){
     .back-video{
         width: 100%;
         height: auto;
@@ -128,7 +146,7 @@ nav ul li a{
   cursor: pointer;
   padding: 15px 15px;
   font-size: 17px;
-  width: 10%;
+  width: 11%;
 }
 
 button    a:link {
@@ -360,7 +378,6 @@ button :hover {
 /* The footer is fixed to the bottom of the page */
 
 footer {
-    position: fixed;
     bottom: 0;
 }
 
@@ -374,7 +391,7 @@ footer {
 }
 
 .footer-distributed {
-    background-color: #2d2a30;
+    background-color: #7e1d1a;
     box-sizing: border-box;
     width: 100%;
     text-align: left;
@@ -433,14 +450,14 @@ footer {
 }
 
 .footer-distributed .footer-center i {
-    background-color: #33383b;
+    background-color: #000;
     color: #ffffff;
-    font-size: 25px;
+    font-size: 20px;
     width: 38px;
     height: 38px;
     border-radius: 50%;
     text-align: center;
-    line-height: 42px;
+    line-height: 35px;
     margin: 10px 15px;
     vertical-align: middle;
 }
@@ -465,7 +482,7 @@ footer {
 }
 
 .footer-distributed .footer-center p a {
-    color: #e0ac1c;
+    color: #fff;
     text-decoration: none;
     ;
 }
@@ -478,7 +495,7 @@ footer {
 
 .footer-distributed .footer-company-about {
     line-height: 20px;
-    color: #92999f;
+    color: #fff;
     font-size: 13px;
     font-weight: normal;
     margin: 0;
