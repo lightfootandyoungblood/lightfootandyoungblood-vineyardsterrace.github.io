@@ -1,114 +1,139 @@
-* {
- margin: 0;
- padding: 0;
- box-sizing: border-box;
- font-family: Veranda, sans-serif;
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Poppins", sans-serif;
+    --color1: #FFF ;
 }
 
- /*Set height of body and the document to 100% */
-body, html {
-  margin: 0;
-  font-family: Veranda;
-  text-align: center;
+.nav-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    position: relative;
+    background-color: #7e1d1a;
+    padding: 15px 30px;
 }
+.logo img {
+    width: 70px;
+}
+
+.logo h1{
+    margin: 20px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bolder;
+    position: absolute;
+    top: 12px;
+    left: 100px;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu li {
+    padding-left: 30px;
+}
+
+.menu li a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--color1);
+    text-align: center;
+    transition: 0.15s ease-in-out;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: transparent;
+    transition: 0.15s ease-in-out;
+    text-decoration: underline;
+}
+.menu li a:hover:after {
+    width: 100%;
+    text-decoration: underline;
+}
+
+.open-menu , .close-menu {
+    position: absolute;
+    color: var(--color1);
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+
+.open-menu {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.close-menu {
+    top: 20px;
+    right: 20px;
+} 
+
+#check {
+    display: none;
+}
+
+@media(max-width: 610px){
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        z-index: 100;
+        background-color: transparent;
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 80%;
+        background: #000;
+        display: flex;
+        justify-content: center;
+        transition: all .50s ease;
+    }
+    .menu li {
+        margin-top: 40px;
+    }
+    .menu li a {
+        padding: 10px;
+    }
+    .open-menu , .close-menu {
+        display: block;
+    }
+    #check:checked ~ .menu {
+        right: 0%;
+    }
+}
+
+/* video */
 
 .hero {
  width: 100%;
  height: 100vh;
  overflow: hidden;
  position: relative;
- background-image: linear-gradient(rgba(12,3,51,0.3)), rgba(12,3,51,0.3);
- align-self: center;
  background-repeat: no-repeat;
  background-size: cover;
  background-attachment: fixed;
  padding: 0 5%;
  display: flex;
  align-items: center;
- justify-content: center;
  flex-direction: column;
-}
-
-nav{
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 20px 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-nav .logo{
-    width: 100px;
-}
-
-nav ul li{
-    list-style: none;
-    display: inline-block;
-    margin-left: 40px;
-}
-
-nav ul li a{
-    text-decoration: none;
-    color: #fff;
-    font-size: 16px;
-    font-weight:bolder;
-}
-
-.navlist{
-    display: flex;
-}
-
-.navlist a{
-    margin: 0px 5px;
-    padding: 5px 10px;
-    color: #d6d6d6;
-    font-size: 16px;
-    font-weight: 500;
-    transition: all .50s ease;
-}
-
-.navlist a:hover{
-    color: #fff;
-}
-.content{
-    text-align: center;
-}
-
-.content h1{
-    font-size: 30px;
-    color: #fff;
-    font-weight: 600;
-    transition: 0.5s;
-  position: absolute;
-  top: 30px;
-  left: 200px;
-}
-
-.content h1:hover{
-    -webkit-text-stroke: 2px #fff;
-    color: transparent;
-}
-
-.content span{
-    font-size: 35px;
-    color: #fff;
-    font-weight: 100;
-    transition: 0.5s;
-}
-
-.content a{
-    text-decoration: none;
-    display: flow;
-    color: #fff;
-    font-size: 24px;
-    border: 2px solid #fff;
-    padding: 10px 70px;
-    border-radius: 50px;
-    margin: auto;
-    width: 50%;
 }
 
 .back-video{
@@ -130,81 +155,164 @@ nav ul li a{
     }
 }
 
-/* Style the tab */
-.tab {
+/* nav */
+
+.container{
+    width: 100%;
+    padding: 10px 0px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.container nav{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container nav::after{
+    content: "";
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top: 100px;
+    filter: blur(0.5px);
+}
+
+.nav {
   overflow: hidden;
   background-color: #fff;
-  color:white;
 }
 
-.tablinks {
-  background-color: #fff;
-  color: #7e1d1a !important;
+.nav a {
   float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 15px 15px;
-  font-size: 17px;
-  width: 11%;
-}
-
-button    a:link {
-         text-decoration: none;
-             color: #7e1d1a;
-      }
-button      a:visited {
-         text-decoration: none;
-             color: #7e1d1a;
-      }
-button      a:hover {
-         text-decoration: underline;
-      }
-button      a:active {
-         text-decoration: underline;
-      }
-
-/* Style the buttons inside the tab */
-.tab button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 15px 15px;
-  transition: 0.3s;
+  display: block;
+  color: #7e1d1a;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
   font-size: 17px;
 }
 
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
+.active {
+  background-color: white;
+  color: #7e1d1a;
 }
 
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #ccc;
-}
-
-/* Style the tab content */
-.tabcontent {
+.nav .icon {
   display: none;
-  padding: 50px;
-  animation: fadeEffect 1s;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 17px;    
+  border: none;
+  outline: none;
+  color: #7e1d1a;
+  padding: 14px 16px;
+  background-color: #fff;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.nav a:hover, .dropdown:hover .dropbtn {
+  background-color: #7e1d1a;
+  color: white;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .nav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+  .nav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .nav.responsive {position: relative;}
+  .nav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .nav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .nav.responsive .dropdown {float: none;}
+  .nav.responsive .dropdown-content {position: relative;}
+  .nav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Style tab links */
+.tablink {
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+}
+
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
   color: black;
   display: none;
+  padding: 100px 30px;
+  height: 100%;
+  text-align: center;
 }
 
-/* Fade in tabs */
-@-webkit-keyframes fadeEffect {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
-@keyframes fadeEffect {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
+#Overview 
+#News 
+#Contact 
+#About
 
 /* Gallery */
 
@@ -238,6 +346,7 @@ button      a:active {
   margin: auto;
 }
 
+/* inquiry */
 .container {
   background: #fff;
   border-radius: 6px;
@@ -291,8 +400,8 @@ button      a:active {
   margin-left: 75px;
 }
 .content .right-side .topic-text {
-  font-size: 23px;
-  font-weight: 600;
+  font-size: 32px;
+  font-weight: bold;
   color: #000;
 }
 .right-side .input-box {
@@ -338,11 +447,9 @@ button :hover {
   background: #7e1d1a;
 }
 
-
 @media (max-width: 950px) {
   .container {
-    width: 90%;
-    padding: 30px 40px 40px 35px;
+    width: 100%;
   }
   .container .content .right-side {
     width: 75%;
@@ -374,6 +481,80 @@ button :hover {
   }
 }
 
+/* floor plan wrapper */
+
+.wrapper{
+    text-align: center;
+}
+.section-header{
+    text-transform: uppercase;
+    line-height: 70px;
+    padding-bottom: 30px;
+    font-size: 32px;
+    color: #262626;
+    letter-spacing: 2px;
+    
+}
+.content {
+  padding: 10%;
+}
+
+.content h2 {
+  font-size: 30px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.main-content{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-main-content-gap: 25px;
+    grid-column-gap: 15px;
+}
+
+.main-content .box{
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 15px;
+    box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.15);
+    overflow: hidden;    
+}
+
+.main-content .box::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.main-content .box:hover:before{
+    top: 0;
+    right: calc(100% - 5px);
+    z-index: 10;
+}
+
+.main-content .box .img-text {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255,255,255,0.9);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 100%;
+    transition: all 0.5s ease-in-out;   
+}
+.main-content .box:hover .img-text{
+    top: 0;
+    right: 0;
+}
+
+
 
 /* The footer is fixed to the bottom of the page */
 
@@ -384,9 +565,6 @@ footer {
 @media (max-height:800px) {
     footer {
         position: static;
-    }
-    header {
-        padding-top: 40px;
     }
 }
 
@@ -546,128 +724,3 @@ footer {
         margin-left: 0;
     }
 }  
-
-/* Card Listing*/
-.cards-wrapper {
-  display: flex;
-  justify-content: center;
-}
-.card img {
-  max-width: 100%;
-  max-height: 100%;
-
-}
-.card {
-  margin: 0 0.5em;
-  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
-  border: none;
-  border-radius: 0;
-  width: calc(100%/3);
-}
-
-.card-body{
-    margin: 3%;
-    text-align: center;
-    font-style: Veranda, sans-serif; 
-}
-
-.card-body p{
-    font-size: 16px;
-    font-weight: 200;
-}
-
-.btn{
-        color: #fff;
-    background-color: #7e1d1a;
-    border-color: #7e1d1a;
-        display: inline-block;
-    margin-bottom: 0;
-    font-weight: 400;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    background-image: none;
-    border: 1px solid transparent;
-    padding: 6px 12px;
-    font-size: 16px;
-    line-height: 1.42857143;
-    border-radius: 4px; 
-    user-select: none;
-}
-
-.image-wrapper{
-    height: 22vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.carousel-inner {
-  padding: 1em;
-}
-.carousel-control-prev,
-.carousel-control-next {
-  background-color: #e1e1e1;
-  width: 5vh;
-  height: 5vh;
-  border-radius: 50%;
-  top: 50%;
-  transform: translateY(-50%);
-}
-@media (min-width: 768px) {
-  .card img {
-    height: 11em;
-  }
-}
-
-/* Floor Plan Dropdown Menu*/
-.dropdown{
-    display:inline-block;
-    position:relative;
-  }
-
-  .dropdown button{
-    border:none;
-    padding:8px 16px;
-    background-color:#7e1d1a;
-    color:white;
-    transition:.3s;
-    cursor:pointer;
-  }
-  
-  .dropdown:hover button{
-    background-color:#7e1d1a;
-  }
-  
-  .dropdown div{
-    background-color:#fff;
-    box-shadow:0 4px 8px rgba(0,0,0,0.2);
-    z-index:1;
-    visibility:hidden;
-    position:absolute;
-    min-width:100%;
-    opacity:0;
-    transition:.3s;
-  }
-  
-  .dropdown:hover div{
-    visibility:visible;
-    opacity:1;
-  }
-  
-  .dropdown div a{
-    display:block;
-    text-decoration:none;
-    padding:8px;
-    color:#000;
-    transition:.1s;
-    white-space:nowrap;
-  }
-  
-  .dropdown div a:hover{
-    background-color:#7e1d1a;
-    color:#fff;
-  }
