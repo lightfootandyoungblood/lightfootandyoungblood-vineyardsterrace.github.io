@@ -232,7 +232,7 @@
         <h2 class="section-header">4 Bed 3 Bath Plan</h2>
         <div class="main-content">
             <div class="box">
-                <img src="https://cdn.resize.sparkplatform.com/somo/640x480/true/20230908004106722603000000-o.jpg" alt="Lightfoot & Youngblood Investment Real Estate">
+                <img id="myImg" src="https://d8wkmujfu2w4l.cloudfront.net/listingphotos131/60251369-24.jpg" alt="Lightfoot & Youngblood Investment Real Estate" style="width:100%;max-width:800px" data-modal>
             </div>
         </div>
     </div>
@@ -241,11 +241,19 @@
         <h2 class="section-header">3 Bed 2 Bath Plan</h2>
         <div class="main-content">
             <div class="box">
-                <img src="https://cdn.resize.sparkplatform.com/somo/640x480/true/20230908034147148233000000-o.jpg" alt="Lightfoot & Youngblood Investment Real Estate">
+                <img id="myImg" src="https://d8wkmujfu2w4l.cloudfront.net/listingphotos131/60251379-22.jpg" style="width:100%;max-width:800px" alt="Lightfoot & Youngblood Investment Real Estate" data-modal>
             </div>
         </div>
     </div>
-  </div>
+
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
+
+</div>
 
 <div id="mapproperty" class="tabcontent">
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3201.4808638851805!2d-93.30945562346132!3d36.63888081555924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87cf1da197d8306f%3A0xe646efb30e02056f!2s3003%20N%20Vineyards%20Ter%20%231%2C%20Branson%2C%20MO%2065616%2C%20USA!5e0!3m2!1sen!2sph!4v1694719511743!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -409,6 +417,22 @@ $(document).ready(function () {
     });
 });
 
+document.querySelectorAll("img[data-modal]").forEach((img) => {
+  var content = document.createElement("div"); //background
+  content.className = "modal-content";
+  content.appendChild(new Image()).src = img.src; //modal image
+  img.insertAdjacentElement("afterend", content); //insert invisible content after image
+  img.addEventListener("click", () => { //show modal on click
+    content.style.opacity = "1";
+    content.style.zIndex = "100";
+    document.documentElement.style.overflow = "hidden"; //prevent scrolling while modal is shown
+  });
+  content.addEventListener("click", () => { //hide modal
+    content.style.opacity = "";
+    content.style.zIndex = "";
+    document.documentElement.style.overflow = "";
+  });
+});
 </script>
 
 </body>

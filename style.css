@@ -503,7 +503,31 @@ body {
     right: 0;
 }
 
+/* floor plan modal */
+img[data-modal] {
+  cursor: zoom-in;
+}
 
+.modal-content {
+  z-index: -100; /* behind everything */
+  opacity: 0; /* invisible */
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8); /* black, transparent */
+  width: 100vw; /* 100% width */
+  height: 100vh; /* 100% height */
+  display: flex;
+  justify-content: center; /* horizontal align */
+  align-items: center; /* vertical align */
+  transition: 0.5s; /* animate */
+  cursor: zoom-out;
+}
+
+.modal-content img {
+  min-width: 50vw; /* at least 50% of the viewport width */
+  height: auto;
+}
 
 /* The footer is fixed to the bottom of the page */
 
